@@ -28,7 +28,7 @@ body {
   font-size: .925rem;
 }
 
-.workspace-wrapper #map {
+.workspace-wrapper .value--map {
   width: 800px;
   height: 475px;
   margin: 2rem auto 0;

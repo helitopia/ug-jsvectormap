@@ -12,7 +12,7 @@
       "style": "./dist/jsvectormap.css",
       "sass": "./src/scss/jsvectormap.scss"
     },
-    "./*": "./*"
+    "./*": "./dist/*"
   },
   "style": "dist/jsvectormap.min.css",
   "sass": "src/scss/jsvectormap.scss",

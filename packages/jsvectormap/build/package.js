@@ -16,20 +16,6 @@ function scssOptions(filename, outputStyle = 'expanded') {
   }
 }
 
-function getCommonMaps() {
-  return ['world-merc', 'world'].map((file) => ({
-    external: ['jsvectormap'],
-    input: `../maps/src/${file}.js`,
-    output: {
-      file: `dist/maps/${file}.js`,
-      format: 'cjs',
-      plugins: [terser()],
-      globals: { jsvectormap: LIBRARY_NAME },
-    },
-    plugins: [resolve()],
-  }))
-}
-
 const builds = ['umd', 'es', 'cjs'].map((format) => {
   const extension = format === 'umd'
     ? 'js'
@@ -67,6 +53,5 @@ export default [
       scss(scssOptions('jsvectormap.min', 'compressed')),
     ],
   },
-  ...builds,
-  ...getCommonMaps(),
+  ...builds
 ]

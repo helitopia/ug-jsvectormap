@@ -1,7 +1,7 @@
 import { merge } from '../util'
 import Region from '../components/region'
 
-export default function createRegions() {
+export default function createRegions(strokeScaling) {
   this._regionLabelsGroup = this._regionLabelsGroup || this.canvas.createGroup('jvm-regions-labels-group')
 
   for (const code in this._mapData.paths) {
@@ -9,6 +9,7 @@ export default function createRegions() {
       map: this,
       code: code,
       path: this._mapData.paths[code].path,
+      strokeScaling,
       style: merge({}, this.params.regionStyle),
       labelStyle: this.params.regionLabelStyle, 
       labelsGroup: this._regionLabelsGroup,
