@@ -8,11 +8,11 @@ import Interactable from './concerns/interactable'
  * ------------------------------------------------------------------------
  */
 class Region extends BaseComponent {
-  constructor({ map, code, path, style, label, labelStyle, labelsGroup }) {
+  constructor({ map, code, path, strokeScaling, style, label, labelStyle, labelsGroup }) {
     super()
 
     this._map = map
-    this.shape = this._createRegion(path, code, style)
+    this.shape = this._createRegion(path, code, strokeScaling, style)
 
     const text = this.getLabelText(code, label)
 
@@ -37,8 +37,10 @@ class Region extends BaseComponent {
     }
   }
 
-  _createRegion(path, code, style) {
-    path = this._map.canvas.createPath({ d: path, dataCode: code }, style)
+  _createRegion(path, code, strokeScaling, style) {
+    path = this._map.canvas.createPath(
+        { d: path, dataCode: code, vectorEffect: strokeScaling ? "none" : "non-scaling-stroke" },
+        style)
     path.addClass('jvm-region jvm-element')
     return path
   }

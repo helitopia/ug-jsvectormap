@@ -70,7 +70,7 @@ class Map {
     this.setBackgroundColor(options.backgroundColor)
 
     // Create regions
-    this._createRegions()
+    this._createRegions(options.strokeScaling)
 
     // Update size
     this.updateSize()

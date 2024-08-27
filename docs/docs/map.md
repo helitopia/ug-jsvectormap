@@ -20,6 +20,7 @@ description: The map section provides detailed information about the options and
 | `zoomStep` | The size of step when zooming in/out | `Number` | `1.5` |
 | `bindTouchEvents` | Enable touch events in mobile | `Boolean` | `true` |
 | `focusOn` | Set focus on a specific region/regions | `Object` | `{}` |
+| `strokeScaling` |    Set whether region stroke will be scaled with the map     | `Boolean` | `true` |
 
 ### Focus on
 

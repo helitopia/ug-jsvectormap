@@ -58,6 +58,7 @@ export default {
   // Region options
   regionsSelectable: false,
   regionsSelectableOne: false,
+  strokeScaling: true,
   regionStyle: {
     initial: {
       fill: '#dee2e8',
